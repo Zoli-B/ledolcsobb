@@ -40,7 +40,7 @@ const products = {
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-// Ellenőrizzük, hogy létezik-e a termék
+// Termék ellenörzés
 if (productId && products[productId]) {
     const product = products[productId];
 
