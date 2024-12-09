@@ -23,3 +23,33 @@ const products = {
         details: "A LED panelek energiatakarékos megoldások kiváló fényeloszlással."
     }
 };
+//RGB szalag animáció
+function generateRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function updateLEDColors() {
+    const ledEffect = document.querySelector('.led-effect::before');
+    const newColor = `linear-gradient(90deg, ${generateRandomColor()}, ${generateRandomColor()}, ${generateRandomColor()})`;
+    ledEffect.style.background = newColor;
+}
+
+//RGB Háttér szuper Diszkó szemrák
+/*setInterval(updateLEDColors, 5000);
+
+let colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+let currentIndex = 0;
+
+function changeBackground() {
+    document.body.style.background = `linear-gradient(90deg, ${colors[currentIndex]}, ${colors[(currentIndex + 1) % colors.length]})`;
+    currentIndex = (currentIndex + 1) % colors.length;
+}
+
+
+setInterval(changeBackground, 2000);*/
+
